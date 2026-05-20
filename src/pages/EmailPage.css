@@ -16,6 +16,9 @@
 
 .email-page__sheet {
   flex-shrink: 0;
+  max-height: 92dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: #ffffff;
   border-radius: 24px 24px 0 0;
   padding: 0 20px 28px;

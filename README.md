@@ -13,22 +13,17 @@ Opens at [http://localhost:5173](http://localhost:5173) with the prototype cente
 
 ## Deploy to GitHub Pages
 
-Live URL: **https://jjeong1007.github.io/shopifymobile/**
+**Live URL (use this exact link):** https://jjeong1007.github.io/shopifymobile/
+
+`https://jjeong1007.github.io/` alone will **not** work — the path must include `/shopifymobile/`.
 
 Pushes to `main` auto-deploy via GitHub Actions.
 
-**Required:** In **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions** (not “Deploy from a branch”). If you use “Deploy from branch”, the site serves raw source and stays blank.
+**Required:** In **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions** (not “Deploy from a branch”).
 
-Live URL: **https://jjeong1007.github.io/shopifymobile/**
-
-If you still see a blank page after fixing settings, hard-refresh or clear cache on your phone (Safari: hold reload → “Request Desktop Website” off, then reload).
+If the page looks blank on your phone, hard-refresh or open in a private tab to clear cache.
 
 ## Screens
 
 - **/** — Welcome (Screen 25) with working Get started / Log in buttons
-- **/email** — Email sign-in sheet (Screen 26) — shared by both flows
-  - Real email input with validation
-  - Continue with email (enabled when email is entered)
-  - Social login buttons (prototype stubs)
-  - Cancel returns to welcome
-  - Footer toggles signup ↔ login mode
+- **#/email** — Email sign-in sheet (Screen 26) — shared by both flows
