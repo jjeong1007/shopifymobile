@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import shopAppIcon from '../assets/shop-app-icon.png';
 import { OnboardingHeader } from '../components/OnboardingHeader';
+import { clearStoreMedia } from '../lib/shopStore';
 import './StoreStartPage.css';
 
 function ChevronRightIcon() {
@@ -68,6 +69,8 @@ export function StoreStartPage() {
   const selectOption = (option: StoreOption) => {
     sessionStorage.setItem('shopify-prototype-store-type', option);
     if (option === 'shop') {
+      sessionStorage.setItem('shopify-prototype-store-theme', 'minimal');
+      clearStoreMedia();
       navigate('/shop/setup');
       return;
     }

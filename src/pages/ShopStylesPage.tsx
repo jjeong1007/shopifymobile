@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { OnboardingHeader } from '../components/OnboardingHeader';
+import {
+  isBannerUploaded,
+  isLogoUploaded,
+  setBannerUploaded,
+  setLogoUploaded,
+  setStoreTheme,
+  type StoreThemeId,
+} from '../lib/shopStore';
 import './ShopStylesPage.css';
 
 function ImageAddIcon() {
@@ -27,9 +35,7 @@ function CheckIcon() {
   );
 }
 
-type ThemeId = 'minimal' | 'bold' | 'elegant';
-
-const THEMES: { id: ThemeId; label: string; swatches: string[] }[] = [
+const THEMES: { id: StoreThemeId; label: string; swatches: string[] }[] = [
   { id: 'minimal', label: 'Minimal', swatches: ['#f1e8df', '#ece5de', '#d4dace'] },
   { id: 'bold', label: 'Bold', swatches: ['#f68634', '#f79dc1', '#bba8e8'] },
   { id: 'elegant', label: 'Elegant', swatches: ['#f2ede5', '#dad1c8', '#b8beaf'] },
@@ -69,11 +75,25 @@ function UploadZone({
 
 export function ShopStylesPage() {
   const navigate = useNavigate();
-  const [selectedTheme, setSelectedTheme] = useState<ThemeId>('minimal');
-  const [logoUploaded, setLogoUploaded] = useState(false);
-  const [bannerUploaded, setBannerUploaded] = useState(false);
+  const [selectedTheme, setSelectedTheme] = useState<StoreThemeId>(() => {
+    const saved = sessionStorage.getItem('shopify-prototype-store-theme');
+    if (saved === 'bold' || saved === 'elegant') return saved;
+    return 'minimal';
+  });
+  const [logoUploaded, setLogoUploadedState] = useState(isLogoUploaded);
+  const [bannerUploaded, setBannerUploadedState] = useState(isBannerUploaded);
 
   const themesDisabled = bannerUploaded;
+
+  const handleLogoUpload = () => {
+    setLogoUploaded(true);
+    setLogoUploadedState(true);
+  };
+
+  const handleBannerUpload = () => {
+    setBannerUploaded(true);
+    setBannerUploadedState(true);
+  };
 
   useEffect(() => {
     if (sessionStorage.getItem('shopify-prototype-store-type') !== 'shop') {
@@ -81,21 +101,19 @@ export function ShopStylesPage() {
     }
   }, [navigate]);
 
+  const finishStyling = () => {
+    if (!themesDisabled) {
+      setStoreTheme(selectedTheme);
+    }
+    navigate('/shop/home');
+  };
+
   const handleSkip = () => {
-    console.info('[prototype] Skipped store styles');
+    finishStyling();
   };
 
   const handleNext = () => {
-    if (!themesDisabled) {
-      sessionStorage.setItem('shopify-prototype-store-theme', selectedTheme);
-    } else {
-      sessionStorage.removeItem('shopify-prototype-store-theme');
-    }
-    console.info('[prototype] Store styles complete', {
-      theme: themesDisabled ? null : selectedTheme,
-      logoUploaded,
-      bannerUploaded,
-    });
+    finishStyling();
   };
 
   return (
@@ -123,7 +141,7 @@ export function ShopStylesPage() {
             title="Upload your logo"
             hint="PNG, JPG, or SVG (recommended size: 512 x 512px)"
             uploaded={logoUploaded}
-            onUpload={() => setLogoUploaded(true)}
+            onUpload={handleLogoUpload}
           />
         </section>
 
@@ -134,7 +152,7 @@ export function ShopStylesPage() {
             title="Upload your banner"
             hint="PNG, JPG, or SVG (recommended size: 240 x 390px)"
             uploaded={bannerUploaded}
-            onUpload={() => setBannerUploaded(true)}
+            onUpload={handleBannerUpload}
           />
         </section>
 
