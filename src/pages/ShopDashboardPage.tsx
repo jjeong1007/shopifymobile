@@ -4,26 +4,24 @@ import enTranslations from '@shopify/polaris/locales/en.json';
 import {
   CheckCircleIcon,
   EditIcon,
-  HomeIcon,
-  MagicIcon,
-  MenuIcon,
   NotificationIcon,
-  OrderIcon,
   PackageIcon,
   PlusIcon,
   ProductIcon,
-  SearchIcon,
   StoreIcon,
 } from '@shopify/polaris-icons';
 import { useNavigate } from 'react-router-dom';
 import shopAppIcon from '../assets/shop-app-icon.png';
 import { PolarisIcon } from '../components/PolarisIcon';
+import { ShopBottomNav } from '../components/ShopBottomNav';
 import { useBannerContrast } from '../hooks/useBannerContrast';
 import {
   getBusinessName,
   getDisplayName,
   getInitials,
+  getStoreSetupProgressPercent,
   getStoreTheme,
+  isShippingConfirmed,
   isBannerUploaded,
   isLogoUploaded,
   STORE_BANNER_PLACEHOLDER,
@@ -44,6 +42,8 @@ export function ShopDashboardPage() {
   const userInitials = getInitials(displayName);
   const hasLogoImage = isLogoUploaded();
   const hasBannerImage = isBannerUploaded();
+  const shippingConfirmed = isShippingConfirmed();
+  const setupProgressPercent = getStoreSetupProgressPercent();
   const bannerColor = hasBannerImage ? null : THEME_BANNER_COLORS[theme];
   const bannerImageSrc = hasBannerImage ? STORE_BANNER_PLACEHOLDER : null;
   const bannerTone = useBannerContrast(bannerColor, bannerImageSrc);
@@ -145,7 +145,10 @@ export function ShopDashboardPage() {
                 Finish setting up your store so you can start selling on the Shop App instantly!
               </p>
               <div className="shop-dashboard__progress">
-                <div className="shop-dashboard__progress-fill" />
+                <div
+                  className="shop-dashboard__progress-fill"
+                  style={{ width: `${setupProgressPercent}%` }}
+                />
               </div>
             </div>
 
@@ -162,9 +165,21 @@ export function ShopDashboardPage() {
               <div className="shop-dashboard__action-card">
                 <PolarisIcon source={PackageIcon} className="shop-dashboard__icon--20" />
                 <p className="shop-dashboard__action-title">Confirm your shipping details</p>
-                <button type="button" className="shop-dashboard__action-btn">
-                  Review Shipping
-                </button>
+                {shippingConfirmed ? (
+                  <PolarisIcon
+                    source={CheckCircleIcon}
+                    tone="emphasis"
+                    className="shop-dashboard__icon--24"
+                  />
+                ) : (
+                  <button
+                    type="button"
+                    className="shop-dashboard__action-btn"
+                    onClick={() => navigate('/shop/shipping')}
+                  >
+                    Review Shipping
+                  </button>
+                )}
               </div>
               <div className="shop-dashboard__action-card">
                 <img alt="" className="shop-dashboard__action-shop-icon" src={shopAppIcon} />
@@ -189,32 +204,7 @@ export function ShopDashboardPage() {
           </button>
         </footer>
 
-        <nav className="shop-dashboard__nav" aria-label="Main navigation">
-            <button type="button" className="shop-dashboard__nav-fab" aria-label="Search">
-              <PolarisIcon source={SearchIcon} className="shop-dashboard__icon--24" />
-            </button>
-            <div className="shop-dashboard__nav-pill">
-              <button
-                type="button"
-                className="shop-dashboard__nav-item shop-dashboard__nav-item--active"
-                aria-label="Home"
-              >
-                <PolarisIcon source={HomeIcon} className="shop-dashboard__icon--24" />
-              </button>
-              <button type="button" className="shop-dashboard__nav-item" aria-label="Orders">
-                <PolarisIcon source={OrderIcon} className="shop-dashboard__icon--24" />
-              </button>
-              <button type="button" className="shop-dashboard__nav-item" aria-label="Products">
-                <PolarisIcon source={ProductIcon} className="shop-dashboard__icon--24" />
-              </button>
-              <button type="button" className="shop-dashboard__nav-item" aria-label="Menu">
-                <PolarisIcon source={MenuIcon} className="shop-dashboard__icon--24" />
-              </button>
-            </div>
-            <button type="button" className="shop-dashboard__nav-fab" aria-label="Assistant">
-              <PolarisIcon source={MagicIcon} className="shop-dashboard__icon--24" />
-            </button>
-        </nav>
+        <ShopBottomNav activeTab="home" />
       </div>
     </AppProvider>
   );

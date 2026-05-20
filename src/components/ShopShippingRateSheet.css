@@ -1,0 +1,320 @@
+.shop-rate-sheet {
+  position: absolute;
+  inset: 0;
+  z-index: 21;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.shop-rate-sheet--open {
+  pointer-events: auto;
+}
+
+.shop-rate-sheet__backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: background 0.28s ease;
+}
+
+.shop-rate-sheet--open .shop-rate-sheet__backdrop {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.shop-rate-sheet__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 88%;
+  background: #ffffff;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(100%);
+  transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.shop-rate-sheet--open .shop-rate-sheet__panel {
+  transform: translateY(0);
+}
+
+.shop-rate-sheet__handle {
+  align-self: center;
+  width: 36px;
+  height: 4px;
+  margin: 8px 0 4px;
+  border-radius: 999px;
+  background: #d9d9d9;
+  flex-shrink: 0;
+}
+
+.shop-rate-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: 8px 16px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.shop-rate-sheet__header-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  color: #000000;
+  cursor: pointer;
+}
+
+.shop-rate-sheet__header-btn--done {
+  font-weight: 600;
+  text-align: right;
+  min-width: 47px;
+}
+
+.shop-rate-sheet__header-btn--done:disabled {
+  color: #8a8a8a;
+  cursor: default;
+}
+
+.shop-rate-sheet__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  color: #000000;
+  text-align: center;
+  max-width: 200px;
+}
+
+.shop-rate-sheet__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 16px 28px;
+}
+
+.shop-rate-sheet__zone-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  background: #f4f4f4;
+}
+
+.shop-rate-sheet__zone-pill-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #727272;
+}
+
+.shop-rate-sheet__zone-pill-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.shop-rate-sheet__desc {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #727272;
+}
+
+.shop-rate-sheet__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shop-rate-sheet__label {
+  font-size: 13px;
+  font-weight: 450;
+  color: #303030;
+}
+
+.shop-rate-sheet__input {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  border: 0.66px solid #8a8a8a;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 450;
+  color: #303030;
+  background: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.shop-rate-sheet__input::placeholder {
+  color: #616161;
+}
+
+.shop-rate-sheet__input:focus {
+  border-color: #303030;
+  box-shadow: 0 0 0 1px #303030;
+}
+
+.shop-rate-sheet__price-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.shop-rate-sheet__price-prefix {
+  position: absolute;
+  left: 12px;
+  font-size: 13px;
+  font-weight: 450;
+  color: #616161;
+  pointer-events: none;
+}
+
+.shop-rate-sheet__input--price {
+  padding-left: 24px;
+}
+
+.shop-rate-sheet__toggle-row {
+  padding: 4px 0;
+}
+
+.shop-rate-sheet__toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.shop-rate-sheet__toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.shop-rate-sheet__toggle-ui {
+  width: 40px;
+  height: 24px;
+  border-radius: 999px;
+  background: #d9d9d9;
+  flex-shrink: 0;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.shop-rate-sheet__toggle-ui::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.shop-rate-sheet__toggle input:checked + .shop-rate-sheet__toggle-ui {
+  background: #303030;
+}
+
+.shop-rate-sheet__toggle input:checked + .shop-rate-sheet__toggle-ui::after {
+  transform: translateX(16px);
+}
+
+.shop-rate-sheet__toggle-label {
+  font-size: 13px;
+  font-weight: 450;
+  color: #303030;
+  line-height: 1.3;
+}
+
+.shop-rate-sheet__preview {
+  margin: 4px 0 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f4f4f4;
+}
+
+.shop-rate-sheet__preview-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #727272;
+}
+
+.shop-rate-sheet__preview-name {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.shop-rate-sheet__preview-desc {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #727272;
+}
+
+.shop-rate-sheet__preview-badge {
+  display: inline-flex;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.06);
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 16px;
+  color: #616161;
+}
+
+/* Matches shop-dashboard__action-btn / shop-styles__customize — destructive text only */
+.shop-rate-sheet__delete-wrap {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.shop-rate-sheet__delete {
+  width: 100%;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 16px;
+  color: #d72c0d;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow:
+    inset 0 -1px 0 #b5b5b5,
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 0.5px 1.5px #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-rate-sheet__delete:active {
+  opacity: 0.9;
+}

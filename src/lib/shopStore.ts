@@ -1,5 +1,7 @@
 import storeBannerPlaceholder from '../assets/placeholder-store-banner.png';
 import storeLogoPlaceholder from '../assets/placeholder-store-logo.png';
+import { clearShopLocation } from './shopLocation';
+import { clearShippingRates } from './shippingRates';
 
 export type StoreThemeId = 'minimal' | 'bold' | 'elegant';
 
@@ -52,9 +54,31 @@ export function setStoreTheme(theme: StoreThemeId) {
   sessionStorage.setItem('shopify-prototype-store-theme', theme);
 }
 
+const SHIPPING_CONFIRMED_KEY = 'shopify-prototype-shipping-confirmed';
+
+export function isShippingConfirmed(): boolean {
+  return sessionStorage.getItem(SHIPPING_CONFIRMED_KEY) === 'true';
+}
+
+export function setShippingConfirmed(value: boolean) {
+  sessionStorage.setItem(SHIPPING_CONFIRMED_KEY, value ? 'true' : 'false');
+}
+
+/** Store setup quick actions: style is complete after onboarding; shipping after save */
+export const STORE_SETUP_TASK_COUNT = 4;
+
+export function getStoreSetupProgressPercent(): number {
+  let completed = 1;
+  if (isShippingConfirmed()) completed += 1;
+  return Math.round((completed / STORE_SETUP_TASK_COUNT) * 100);
+}
+
 export function clearStoreMedia() {
   setLogoUploaded(false);
   setBannerUploaded(false);
+  setShippingConfirmed(false);
+  clearShopLocation();
+  clearShippingRates();
 }
 
 /** True when user skipped uploads and uses default theme styling */

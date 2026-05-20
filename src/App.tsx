@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { EmailPage } from './pages/EmailPage';
 import { ShopDashboardPage } from './pages/ShopDashboardPage';
+import { ShopShippingPage } from './pages/ShopShippingPage';
 import { ShopSetupPage } from './pages/ShopSetupPage';
 import { ShopStylesPage } from './pages/ShopStylesPage';
 import { StoreStartPage } from './pages/StoreStartPage';
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/shop/setup" element={<ShopSetupPage />} />
         <Route path="/shop/styles" element={<ShopStylesPage />} />
         <Route path="/shop/home" element={<ShopDashboardPage />} />
+        <Route path="/shop/shipping" element={<ShopShippingPage />} />
         <Route path="/get-started" element={<Navigate to="/email?flow=signup" replace />} />
         <Route path="/log-in" element={<Navigate to="/email?flow=login" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
