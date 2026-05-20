@@ -19,7 +19,12 @@ export function ShopBottomNav({ activeTab = 'home' }: ShopBottomNavProps) {
 
   return (
     <nav className="shop-bottom-nav" aria-label="Main navigation">
-      <button type="button" className="shop-bottom-nav__fab" aria-label="Search">
+      <button
+        type="button"
+        className="shop-bottom-nav__fab"
+        aria-label="Search"
+        onClick={() => navigate('/shop/search')}
+      >
         <PolarisIcon source={SearchIcon} className="shop-bottom-nav__icon--24" />
       </button>
       <div className="shop-bottom-nav__pill">
@@ -51,6 +56,7 @@ export function ShopBottomNav({ activeTab = 'home' }: ShopBottomNavProps) {
           type="button"
           className={`shop-bottom-nav__item${activeTab === 'menu' ? ' shop-bottom-nav__item--active' : ''}`}
           aria-label="Menu"
+          onClick={() => navigate('/shop/menu')}
         >
           <PolarisIcon source={MenuIcon} className="shop-bottom-nav__icon--24" />
         </button>

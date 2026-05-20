@@ -1,0 +1,81 @@
+.shop-not-in-test {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+.shop-not-in-test__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 16px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.shop-not-in-test__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  color: #000000;
+  text-align: center;
+}
+
+.shop-not-in-test__content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 32px 120px;
+  text-align: center;
+}
+
+.shop-not-in-test__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: #f4f4f4;
+}
+
+.shop-not-in-test__heading {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.shop-not-in-test__desc {
+  margin: 0;
+  max-width: 320px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #727272;
+}
+
+.shop-not-in-test .shop-not-in-test__icon--24 svg {
+  width: 24px;
+  height: 24px;
+}
+
+.shop-not-in-test .shop-not-in-test__icon--24 {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.shop-not-in-test .Polaris-Icon {
+  margin: 0;
+}
