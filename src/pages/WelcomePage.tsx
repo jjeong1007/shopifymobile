@@ -34,7 +34,7 @@ export function WelcomePage() {
         aria-label="Get started"
         className={`welcome__hit ${pressed === 'get-started' ? 'welcome__hit--pressed' : ''}`}
         style={rectStyle(GET_STARTED)}
-        onClick={() => navigate('/get-started')}
+        onClick={() => navigate('/email?flow=signup')}
         onPointerDown={() => setPressed('get-started')}
         onPointerUp={() => setPressed(null)}
         onPointerLeave={() => setPressed(null)}
@@ -44,7 +44,7 @@ export function WelcomePage() {
         aria-label="Log in"
         className={`welcome__hit ${pressed === 'log-in' ? 'welcome__hit--pressed' : ''}`}
         style={rectStyle(LOG_IN)}
-        onClick={() => navigate('/log-in')}
+        onClick={() => navigate('/email?flow=login')}
         onPointerDown={() => setPressed('log-in')}
         onPointerUp={() => setPressed(null)}
         onPointerLeave={() => setPressed(null)}
