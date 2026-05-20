@@ -10,7 +10,7 @@ import {
   PlusCircleIcon,
   ChevronRightIcon,
 } from '@shopify/polaris-icons';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import usFlag from '../assets/us-flag.png';
 import { PolarisIcon } from '../components/PolarisIcon';
 import { ShopBottomNav } from '../components/ShopBottomNav';
@@ -74,8 +74,12 @@ function ShippingRateRow({
   );
 }
 
+type ShippingNavState = { returnTo?: string };
+
 export function ShopShippingPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const returnTo = (location.state as ShippingNavState | null)?.returnTo;
   const [shopLocation, setShopLocationState] = useState<ShopLocation>(() => getShopLocation());
   const [domesticRates, setDomesticRates] = useState(() => getDomesticShippingRates());
   const [rates, setRates] = useState(() => getShippingRates());
@@ -89,11 +93,11 @@ export function ShopShippingPage() {
     }
   }, [navigate]);
 
-  const goHome = () => navigate('/shop/home');
+  const goBack = () => navigate(returnTo ?? '/shop/home');
 
   const handleSave = () => {
     setShippingConfirmed(true);
-    navigate('/shop/home');
+    navigate(returnTo ?? '/shop/home');
   };
 
   const closeRateSheet = () => {
@@ -126,7 +130,7 @@ export function ShopShippingPage() {
     <AppProvider i18n={enTranslations}>
       <div className="shop-shipping">
         <header className="shop-shipping__topbar">
-          <button type="button" className="shop-shipping__topbar-btn" onClick={goHome}>
+          <button type="button" className="shop-shipping__topbar-btn" onClick={goBack}>
             Cancel
           </button>
           <h1 className="shop-shipping__topbar-title">Shipping &amp; Delivery</h1>

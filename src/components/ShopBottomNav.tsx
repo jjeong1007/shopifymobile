@@ -35,6 +35,7 @@ export function ShopBottomNav({ activeTab = 'home' }: ShopBottomNavProps) {
           type="button"
           className={`shop-bottom-nav__item${activeTab === 'orders' ? ' shop-bottom-nav__item--active' : ''}`}
           aria-label="Orders"
+          onClick={() => navigate('/shop/orders')}
         >
           <PolarisIcon source={OrderIcon} className="shop-bottom-nav__icon--24" />
         </button>
@@ -42,6 +43,7 @@ export function ShopBottomNav({ activeTab = 'home' }: ShopBottomNavProps) {
           type="button"
           className={`shop-bottom-nav__item${activeTab === 'products' ? ' shop-bottom-nav__item--active' : ''}`}
           aria-label="Products"
+          onClick={() => navigate('/shop/products')}
         >
           <PolarisIcon source={ProductIcon} className="shop-bottom-nav__icon--24" />
         </button>

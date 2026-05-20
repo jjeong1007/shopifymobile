@@ -131,7 +131,11 @@ export function ShopDashboardPage() {
 
           <section className="shop-dashboard__section">
             <h2 className="shop-dashboard__section-title">Your Product Listings</h2>
-            <button type="button" className="shop-dashboard__add-product">
+            <button
+              type="button"
+              className="shop-dashboard__add-product"
+              onClick={() => navigate('/shop/product/add', { state: { returnTo: '/shop/home' } })}
+            >
               <PolarisIcon source={PlusIcon} tone="subdued" className="shop-dashboard__icon--20" />
               <span>Add a new product</span>
             </button>
@@ -182,16 +186,22 @@ export function ShopDashboardPage() {
                 )}
               </div>
               <div className="shop-dashboard__action-card">
-                <img alt="" className="shop-dashboard__action-shop-icon" src={shopAppIcon} />
-                <p className="shop-dashboard__action-title">Start selling on the Shop app</p>
-                <button type="button" className="shop-dashboard__action-btn">Download Shop</button>
-              </div>
-              <div className="shop-dashboard__action-card">
                 <PolarisIcon source={ProductIcon} className="shop-dashboard__icon--20" />
                 <p className="shop-dashboard__action-title">
                   Upload products that you want to start selling.
                 </p>
-                <button type="button" className="shop-dashboard__action-btn">Add a product</button>
+                <button
+                  type="button"
+                  className="shop-dashboard__action-btn"
+                  onClick={() => navigate('/shop/product/add', { state: { returnTo: '/shop/home' } })}
+                >
+                  Add a product
+                </button>
+              </div>
+              <div className="shop-dashboard__action-card">
+                <img alt="" className="shop-dashboard__action-shop-icon" src={shopAppIcon} />
+                <p className="shop-dashboard__action-title">Start selling on the Shop app</p>
+                <button type="button" className="shop-dashboard__action-btn">Download Shop</button>
               </div>
             </div>
           </section>

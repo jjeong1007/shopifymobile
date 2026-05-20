@@ -1,5 +1,8 @@
 import storeBannerPlaceholder from '../assets/placeholder-store-banner.png';
 import storeLogoPlaceholder from '../assets/placeholder-store-logo.png';
+import { clearProductCatalog } from './productCatalog';
+import { clearShopOrders } from './shopOrders';
+import { clearProductDraft } from './productDraft';
 import { clearShopLocation } from './shopLocation';
 import { clearShippingRates } from './shippingRates';
 
@@ -79,6 +82,9 @@ export function clearStoreMedia() {
   setShippingConfirmed(false);
   clearShopLocation();
   clearShippingRates();
+  clearProductDraft();
+  clearProductCatalog();
+  clearShopOrders();
 }
 
 /** True when user skipped uploads and uses default theme styling */
