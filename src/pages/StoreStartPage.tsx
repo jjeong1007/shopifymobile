@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import shopAppIcon from '../assets/shop-app-icon.png';
 import './StoreStartPage.css';
 
@@ -61,10 +62,15 @@ function StoreIcon() {
 type StoreOption = 'shop' | 'storefront';
 
 export function StoreStartPage() {
+  const navigate = useNavigate();
+
   const selectOption = (option: StoreOption) => {
     sessionStorage.setItem('shopify-prototype-store-type', option);
-    console.info('[prototype] Selected store type:', option);
-    // Next screen will plug in here
+    if (option === 'shop') {
+      navigate('/shop/setup');
+      return;
+    }
+    console.info('[prototype] Storefront flow not implemented');
   };
 
   return (

@@ -1,0 +1,267 @@
+/* Figma node 473:3164 — Store Styles; footer 473:3261 */
+
+.shop-styles {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.shop-styles__scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: max(24px, env(safe-area-inset-top)) 24px 16px;
+}
+
+.shop-styles__skip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-end;
+  margin-bottom: 27px;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-styles__title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000000;
+  max-width: 256px;
+}
+
+.shop-styles__subtitle {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #727272;
+  max-width: 298px;
+}
+
+.shop-styles__section-title {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.shop-styles__block {
+  margin-bottom: 20px;
+}
+
+.shop-styles__label {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #373737;
+}
+
+.shop-styles__hint {
+  margin: 0 0 8px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #727272;
+}
+
+.shop-styles__upload-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 153px;
+  padding: 16px;
+  border: 0.5px solid #b2b2b2;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.shop-styles__upload-zone--success {
+  background: #f3faf7;
+  border-color: #b8e6d0;
+}
+
+.shop-styles__upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 298px;
+  text-align: center;
+}
+
+.shop-styles__upload-title {
+  margin: 4px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #303030;
+}
+
+.shop-styles__upload-hint {
+  margin: 0 0 8px;
+  font-size: 8px;
+  line-height: 1.35;
+  color: #727272;
+}
+
+.shop-styles__upload-success {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #008060;
+}
+
+.shop-styles__upload-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 550;
+  color: #303030;
+  cursor: pointer;
+  box-shadow:
+    inset 0 -1px 0 #b5b5b5,
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 0.5px 1.5px #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-styles__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 20px;
+}
+
+.shop-styles__divider--disabled {
+  opacity: 0.4;
+}
+
+.shop-styles__divider-line {
+  flex: 1;
+  height: 1px;
+  background: #d9d9d9;
+}
+
+.shop-styles__divider-text {
+  font-size: 12px;
+  color: #a4a4a4;
+}
+
+.shop-styles__theme-section--disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.shop-styles__theme-section--disabled .shop-styles__hint {
+  color: #a4a4a4;
+}
+
+.shop-styles__themes {
+  display: flex;
+  gap: 12px;
+}
+
+.shop-styles__theme-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border: 0.5px solid #b2b2b2;
+  border-radius: 8px;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-styles__theme-card:disabled {
+  cursor: not-allowed;
+}
+
+.shop-styles__theme-card--selected {
+  border-color: #303030;
+  box-shadow: 0 0 0 1px #303030;
+}
+
+.shop-styles__theme-name {
+  font-size: 8px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.shop-styles__swatches {
+  display: flex;
+  gap: 7px;
+}
+
+.shop-styles__swatch {
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid #b2b2b2;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.shop-styles__customize {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 550;
+  color: #303030;
+  cursor: pointer;
+  box-shadow:
+    inset 0 -1px 0 #b5b5b5,
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 0.5px 1.5px #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Figma 473:3261 — fixed footer */
+.shop-styles__footer {
+  flex-shrink: 0;
+  padding: 10px 24px max(10px, env(safe-area-inset-bottom));
+  background: #ffffff;
+  border-top: 1px solid #d4d4d4;
+}
+
+.shop-styles__next {
+  width: 100%;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #303030 0%, #1a1a1a 100%);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  cursor: pointer;
+  box-shadow:
+    inset 0 -1px 1px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px #303030,
+    inset 0 0.5px 1.5px rgba(255, 255, 255, 0.25);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-styles__next:active,
+.shop-styles__customize:active,
+.shop-styles__upload-btn:active {
+  opacity: 0.9;
+}

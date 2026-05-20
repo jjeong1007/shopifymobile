@@ -1,0 +1,124 @@
+/* Figma node 419:1795 — Personal Store / Let's build your store */
+
+.shop-setup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+  background: #ffffff;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.shop-setup__skip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-end;
+  margin-bottom: 27px;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-setup__title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000000;
+  max-width: 256px;
+}
+
+.shop-setup__subtitle {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #727272;
+  max-width: 298px;
+}
+
+.shop-setup__section-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.shop-setup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.shop-setup__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shop-setup__label {
+  font-size: 13px;
+  font-weight: 450;
+  color: #303030;
+}
+
+.shop-setup__field input {
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  border: 0.66px solid #8a8a8a;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 450;
+  color: #303030;
+  background: #ffffff;
+  outline: none;
+}
+
+.shop-setup__field input::placeholder {
+  color: #616161;
+}
+
+.shop-setup__field input:focus {
+  border-color: #303030;
+  box-shadow: 0 0 0 1px #303030;
+}
+
+.shop-setup__input--error {
+  border-color: #d72c0d;
+}
+
+.shop-setup__next {
+  margin-top: 8px;
+  width: 100%;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #303030 0%, #1a1a1a 100%);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow:
+    inset 0 -1px 1px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px #303030,
+    inset 0 0.5px 1.5px rgba(255, 255, 255, 0.25);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-setup__next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.shop-setup__next:not(:disabled):active {
+  opacity: 0.9;
+}
