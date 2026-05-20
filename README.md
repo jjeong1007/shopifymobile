@@ -15,12 +15,13 @@ Opens at [http://localhost:5173](http://localhost:5173) with the prototype cente
 
 Live URL: **https://jjeong1007.github.io/shopifymobile/**
 
-Pushes to `main` auto-deploy via GitHub Actions. One-time setup in the repo on GitHub:
+Pushes to `main` auto-deploy via GitHub Actions.
 
-1. **Settings → Pages → Build and deployment → Source:** choose **GitHub Actions** (not “Deploy from branch”).
-2. Push to `main` — the workflow builds `dist/` and publishes it.
+**Required:** In **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions** (not “Deploy from a branch”). If you use “Deploy from branch”, the site serves raw source and stays blank.
 
-If the site was blank before, it was serving raw source (`/src/main.tsx`) instead of the production build.
+Live URL: **https://jjeong1007.github.io/shopifymobile/**
+
+If you still see a blank page after fixing settings, hard-refresh or clear cache on your phone (Safari: hold reload → “Request Desktop Website” off, then reload).
 
 ## Screens
 
