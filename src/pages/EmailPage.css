@@ -38,7 +38,7 @@
   border: none;
   background: none;
   color: #007aff;
-  font-size: 17px;
+  font-size: 19px;
   cursor: pointer;
   padding: 0;
   text-align: left;
@@ -53,7 +53,7 @@
   border-radius: 8px;
   background: #f2f2f7;
   color: #1a1a1a;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -100,7 +100,7 @@
   padding: 0 16px;
   border: 1.5px solid #1a1a1a;
   border-radius: 10px;
-  font-size: 17px;
+  font-size: 19px;
   color: #1a1a1a;
   background: #ffffff;
   outline: none;
@@ -121,7 +121,7 @@
 
 .email-page__error {
   margin: -4px 0 0;
-  font-size: 13px;
+  font-size: 15px;
   color: #d72c0d;
 }
 
@@ -132,7 +132,7 @@
   border-radius: 10px;
   background: #1a1a1a;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600; /* semi-bold */
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
@@ -154,7 +154,7 @@
   gap: 12px;
   margin: 20px 0 16px;
   color: #8c9196;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .email-page__divider::before,
@@ -182,7 +182,7 @@
   border-radius: 10px;
   background: #f1f1f1;
   color: #1a1a1a;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   cursor: pointer;
 }
@@ -199,7 +199,7 @@
 .email-page__footer {
   margin-top: 24px;
   text-align: center;
-  font-size: 15px;
+  font-size: 17px;
   color: #1a1a1a;
   line-height: 22px;
 }

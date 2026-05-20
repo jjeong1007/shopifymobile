@@ -54,7 +54,7 @@
   border: none;
   background: transparent;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: normal;
   color: #000000;
@@ -120,7 +120,7 @@
 }
 
 .add-product__image-label {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 18px;
   color: #005bd3;
@@ -139,7 +139,7 @@
   border: none;
   background: transparent;
   padding: 0;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 400;
   line-height: normal;
   color: #000000;
@@ -191,14 +191,14 @@
 }
 
 .add-product__row-sublabel {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 450;
   line-height: normal;
   color: #727272;
 }
 
 .add-product__row-value {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.35;
   color: #000000;
@@ -208,7 +208,7 @@
 }
 
 .add-product__row-label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: normal;
   color: #000000;
@@ -230,7 +230,7 @@
 }
 
 .add-product__field-label {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 450;
   line-height: normal;
   color: #303030;
@@ -249,7 +249,7 @@
 }
 
 .add-product__price-prefix {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 450;
   line-height: 20px;
   color: #616161;
@@ -262,7 +262,7 @@
   border: none;
   background: transparent;
   padding: 0;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 450;
   line-height: 20px;
   color: #303030;
@@ -280,7 +280,7 @@
   border: none;
   border-radius: 8px;
   background: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 550;
   line-height: 16px;
   color: #303030;
@@ -307,7 +307,7 @@
 
 .add-product__shipping-label {
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 450;
   line-height: normal;
   color: #303030;
@@ -352,14 +352,14 @@
 }
 
 .add-product__shipping-setup-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
 }
 
 .add-product__shipping-setup-desc {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.35;
   color: #727272;
@@ -395,7 +395,7 @@
   padding: 2px 8px;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.06);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 550;
   line-height: 16px;
   color: #616161;
@@ -408,7 +408,7 @@
 }
 
 .add-product__shipping-origin-text {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.35;
   color: #727272;
@@ -443,14 +443,14 @@
 }
 
 .add-product__shipping-zone-name {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
 }
 
 .add-product__shipping-zone-meta {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 550;
   line-height: 16px;
   color: #616161;

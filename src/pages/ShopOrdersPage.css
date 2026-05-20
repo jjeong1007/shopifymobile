@@ -24,7 +24,7 @@
 
 .shop-orders__title {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -46,7 +46,7 @@
   border: none;
   border-radius: 999px;
   background: #f4f4f4;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   line-height: normal;
   color: #303030;
@@ -114,7 +114,7 @@
 
 .shop-orders__item-number {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -123,7 +123,7 @@
 .shop-orders__item-badge {
   padding: 2px 6px;
   border-radius: 6px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 550;
   line-height: 14px;
   flex-shrink: 0;
@@ -141,7 +141,7 @@
 
 .shop-orders__item-customer {
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   line-height: normal;
   color: #303030;
@@ -158,14 +158,14 @@
 }
 
 .shop-orders__item-date {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: normal;
   color: #727272;
 }
 
 .shop-orders__item-total {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -194,14 +194,14 @@
 
 .shop-orders__empty-title {
   margin: 0 0 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #000000;
 }
 
 .shop-orders__empty-desc {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   color: #727272;
 }

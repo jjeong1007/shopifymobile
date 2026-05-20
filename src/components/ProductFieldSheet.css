@@ -68,7 +68,7 @@
   border: none;
   background: transparent;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: normal;
   color: #000000;
@@ -88,7 +88,7 @@
 
 .product-field-sheet__title {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -108,7 +108,7 @@
 
 .product-field-sheet__desc {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
   color: #727272;
@@ -121,7 +121,7 @@
 }
 
 .product-field-sheet__label {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 450;
   color: #303030;
 }
@@ -132,7 +132,7 @@
   padding: 10px 12px;
   border: 0.66px solid #8a8a8a;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 450;
   line-height: 1.45;
   color: #303030;

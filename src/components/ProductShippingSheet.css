@@ -72,7 +72,7 @@
 
 .product-shipping-sheet__title {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
   color: #000000;
@@ -110,7 +110,7 @@
 
 .product-shipping-sheet__heading {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -118,7 +118,7 @@
 
 .product-shipping-sheet__subheading {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: normal;
   color: #727272;
@@ -132,7 +132,7 @@
 
 .product-shipping-sheet__block-label {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -157,7 +157,7 @@
 
 .product-shipping-sheet__location-title {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -165,7 +165,7 @@
 
 .product-shipping-sheet__location-subtitle {
   margin: 0;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   line-height: normal;
   color: #727272;
@@ -204,7 +204,7 @@
 
 .product-shipping-sheet__zone-title {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -212,7 +212,7 @@
 
 .product-shipping-sheet__zone-subtitle {
   margin: 0;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   line-height: normal;
   color: #727272;
@@ -241,7 +241,7 @@
 
 .product-shipping-sheet__rate-title {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -249,7 +249,7 @@
 
 .product-shipping-sheet__rate-desc {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: normal;
   color: #727272;
@@ -260,7 +260,7 @@
   padding: 2px 8px;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.06);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 550;
   line-height: 16px;
   color: #616161;
@@ -275,7 +275,7 @@
   border: 1px solid #dedede;
   border-radius: 12px;
   background: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: normal;
   color: #000000;

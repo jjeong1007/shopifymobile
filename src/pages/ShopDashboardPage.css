@@ -135,7 +135,7 @@
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 28px;
 }
 
@@ -150,7 +150,7 @@
   border-radius: 999px;
   background: #c530c5;
   color: #ffffff;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 28px;
 }
 
@@ -173,7 +173,7 @@
 
 .shop-dashboard__store-name {
   margin: 0 0 8px;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 550;
   line-height: normal;
   color: #000000;
@@ -181,7 +181,7 @@
 
 .shop-dashboard__welcome {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 550;
   line-height: normal;
   color: #000000;
@@ -233,7 +233,7 @@
 }
 
 .shop-dashboard__stat-value {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: normal;
   color: #000000;
@@ -254,7 +254,7 @@
 
 .shop-dashboard__section-title {
   margin: 0 0 9px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: normal;
   color: #000000;
@@ -281,7 +281,7 @@
   border: 1px dashed #d3d3d3;
   border-radius: 12px;
   background: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 18px;
   color: #616161;
@@ -331,7 +331,7 @@
 
 .shop-dashboard__listing-title {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.3;
   color: #000000;
@@ -342,7 +342,7 @@
 
 .shop-dashboard__listing-price {
   margin: 0;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 450;
   line-height: normal;
   color: #727272;
@@ -365,7 +365,7 @@
 
 .shop-dashboard__setup-title {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -417,7 +417,7 @@
 .shop-dashboard__action-title {
   flex: 1;
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: normal;
   color: #000000;
@@ -437,7 +437,7 @@
   border: none;
   border-radius: 8px;
   background: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 550;
   line-height: 16px;
   color: #303030;
@@ -471,7 +471,7 @@
   border-radius: 999px;
   background: #5433eb;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: normal;
   white-space: nowrap;
