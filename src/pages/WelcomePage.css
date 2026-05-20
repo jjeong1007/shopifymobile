@@ -1,40 +1,146 @@
+/* Matches Figma node 419:1647 — native UI for sharp rendering on retina displays */
+
 .welcome {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   min-height: 100%;
-  overflow: hidden;
+  padding: max(12px, env(safe-area-inset-top)) 24px max(16px, env(safe-area-inset-bottom));
   background: #ffffff;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
 }
 
-.welcome__stage {
-  position: absolute;
-  transform-origin: top left;
+.welcome__header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 4px;
 }
 
-.welcome__artwork {
-  display: block;
-  width: 100%;
-  height: 100%;
+.welcome__illustration {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+}
+
+.welcome__illustration-circle {
+  width: min(82vw, 300px);
+  height: min(82vw, 300px);
+  max-height: min(42dvh, 300px);
+  border-radius: 50%;
+  background: #f1f1f1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome__illustration-img {
+  width: 86%;
+  height: auto;
+  max-height: 92%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
   pointer-events: none;
   user-select: none;
-  -webkit-user-drag: none;
 }
 
-.welcome__hit {
-  position: absolute;
+.welcome__copy {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 8px 0 16px;
+}
+
+.welcome__headline {
+  margin: 0 0 10px;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #1a1a1a;
+}
+
+.welcome__subheadline {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #6d7175;
+}
+
+.welcome__features {
+  list-style: none;
   margin: 0;
   padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.welcome__features li {
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.welcome__actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.welcome__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
   border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  border: none;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
 
-.welcome__hit--pressed {
-  background: rgba(0, 0, 0, 0.06);
+.welcome__btn--primary {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.welcome__btn--secondary {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #e3e3e3;
+}
+
+.welcome__btn--pressed {
+  opacity: 0.88;
+}
+
+@media (max-width: 430px) {
+  .welcome {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .welcome__illustration-circle {
+    width: min(88vw, 320px);
+    height: min(88vw, 320px);
+    max-height: min(44dvh, 320px);
+  }
+
+  .welcome__headline {
+    font-size: 27px;
+  }
 }
