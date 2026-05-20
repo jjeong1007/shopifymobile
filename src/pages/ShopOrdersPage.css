@@ -14,25 +14,21 @@
 }
 
 .shop-orders__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  padding: 16px 12px 12px;
+  padding: 16px 12px;
   border-bottom: 1px solid #f0f0f0;
 }
 
 .shop-orders__title {
   margin: 0;
-  font-size: 24px;
-  font-weight: 550;
+  font-size: 16px;
+  font-weight: 600;
   line-height: normal;
   color: #000000;
-}
-
-.shop-orders__subtitle {
-  margin: 4px 0 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-  color: #727272;
+  text-align: center;
 }
 
 .shop-orders__filters {

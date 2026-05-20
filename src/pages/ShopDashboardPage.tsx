@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AppProvider } from '@shopify/polaris';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import {
@@ -10,7 +10,8 @@ import {
   ProductIcon,
   StoreIcon,
 } from '@shopify/polaris-icons';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import productMain from '../assets/placeholder-product-main.png';
 import shopAppIcon from '../assets/shop-app-icon.png';
 import { PolarisIcon } from '../components/PolarisIcon';
 import { ShopBottomNav } from '../components/ShopBottomNav';
@@ -30,11 +31,36 @@ import {
   THEME_STORE_LOGO_COLORS,
   THEME_STORE_LOGO_TEXT_COLORS,
 } from '../lib/shopStore';
+import {
+  formatCatalogPrice,
+  getCatalogProducts,
+  type CatalogProduct,
+} from '../lib/productCatalog';
 import '@shopify/polaris/build/esm/styles.css';
 import './ShopDashboardPage.css';
 
+function ListingCard({ product }: { product: CatalogProduct }) {
+  return (
+    <div className="shop-dashboard__listing-card">
+      <div className="shop-dashboard__listing-media">
+        {product.hasImages ? (
+          <img src={productMain} alt="" className="shop-dashboard__listing-img" />
+        ) : (
+          <span className="shop-dashboard__listing-placeholder" aria-hidden>
+            <PolarisIcon source={ProductIcon} tone="subdued" className="shop-dashboard__icon--20" />
+          </span>
+        )}
+      </div>
+      <p className="shop-dashboard__listing-title">{product.title}</p>
+      <p className="shop-dashboard__listing-price">{formatCatalogPrice(product.price)}</p>
+    </div>
+  );
+}
+
 export function ShopDashboardPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [products, setProducts] = useState(() => getCatalogProducts());
   const theme = getStoreTheme();
   const businessName = getBusinessName();
   const displayName = getDisplayName();
@@ -60,6 +86,10 @@ export function ShopDashboardPage() {
       navigate('/store-start', { replace: true });
     }
   }, [navigate]);
+
+  useEffect(() => {
+    setProducts(getCatalogProducts());
+  }, [location.key]);
 
   const heroStyle = hasBannerImage
     ? {
@@ -131,14 +161,19 @@ export function ShopDashboardPage() {
 
           <section className="shop-dashboard__section">
             <h2 className="shop-dashboard__section-title">Your Product Listings</h2>
-            <button
-              type="button"
-              className="shop-dashboard__add-product"
-              onClick={() => navigate('/shop/product/add', { state: { returnTo: '/shop/home' } })}
-            >
-              <PolarisIcon source={PlusIcon} tone="subdued" className="shop-dashboard__icon--20" />
-              <span>Add a new product</span>
-            </button>
+            <div className="shop-dashboard__listings">
+              {products.map((product) => (
+                <ListingCard key={product.id} product={product} />
+              ))}
+              <button
+                type="button"
+                className="shop-dashboard__add-product"
+                onClick={() => navigate('/shop/product/add', { state: { returnTo: '/shop/home' } })}
+              >
+                <PolarisIcon source={PlusIcon} tone="subdued" className="shop-dashboard__icon--20" />
+                <span>Add a new product</span>
+              </button>
+            </div>
           </section>
 
           <section className="shop-dashboard__section shop-dashboard__section--quick-actions">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AppProvider } from '@shopify/polaris';
 import enTranslations from '@shopify/polaris/locales/en.json';
-import { ChevronRightIcon, ProductIcon } from '@shopify/polaris-icons';
+import { ChevronRightIcon, PlusIcon, ProductIcon } from '@shopify/polaris-icons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import productMain from '../assets/placeholder-product-main.png';
 import { PolarisIcon } from '../components/PolarisIcon';
@@ -56,7 +56,6 @@ export function ShopProductsPage() {
   }, [location.key]);
 
   const productCount = products.length;
-  const countLabel = productCount === 1 ? '1 product' : `${productCount} products`;
 
   const openAddProduct = () => {
     navigate('/shop/product/add', { state: { returnTo: '/shop/products' } });
@@ -66,8 +65,16 @@ export function ShopProductsPage() {
     <AppProvider i18n={enTranslations}>
       <div className="shop-products">
         <header className="shop-products__header">
+          <span className="shop-products__header-spacer" aria-hidden />
           <h1 className="shop-products__title">Products</h1>
-          <p className="shop-products__subtitle">{countLabel}</p>
+          <button
+            type="button"
+            className="shop-products__add-btn"
+            onClick={openAddProduct}
+            aria-label="Add product"
+          >
+            <PolarisIcon source={PlusIcon} className="shop-products__icon--20" />
+          </button>
         </header>
 
         <div className="shop-products__scroll">

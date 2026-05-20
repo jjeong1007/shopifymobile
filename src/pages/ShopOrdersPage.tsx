@@ -56,20 +56,11 @@ export function ShopOrdersPage() {
     return order.fulfillmentStatus === filter;
   });
 
-  const orderCount = filteredOrders.length;
-  const countLabel =
-    filter === 'all'
-      ? orderCount === 1
-        ? '1 order'
-        : `${orderCount} orders`
-      : `${orderCount} ${filter}`;
-
   return (
     <AppProvider i18n={enTranslations}>
       <div className="shop-orders">
         <header className="shop-orders__header">
           <h1 className="shop-orders__title">Orders</h1>
-          <p className="shop-orders__subtitle">{countLabel}</p>
         </header>
 
         <div className="shop-orders__filters" role="tablist" aria-label="Order filters">
