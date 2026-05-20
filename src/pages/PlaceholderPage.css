@@ -1,0 +1,38 @@
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 24px;
+  gap: 12px;
+  background: #ffffff;
+}
+
+.placeholder__title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+}
+
+.placeholder__description {
+  font-size: 15px;
+  line-height: 22px;
+  color: #6d7175;
+}
+
+.placeholder__back {
+  margin-top: 24px;
+  align-self: flex-start;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #008060;
+  cursor: pointer;
+  padding: 0;
+}
+
+.placeholder__back:hover {
+  opacity: 0.8;
+}
