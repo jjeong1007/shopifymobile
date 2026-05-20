@@ -36,37 +36,20 @@
   -webkit-user-drag: none;
 }
 
-.welcome__btn {
+/* Invisible tap targets over the buttons baked into the artwork */
+.welcome__hit {
   position: absolute;
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0;
   padding: 0;
-  border-radius: 12px;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1;
+  border: none;
+  background: transparent;
   cursor: pointer;
+  border-radius: 12px;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
 
-.welcome__btn--primary {
-  z-index: 3;
-  border: none;
-  background: #1a1a1a;
-  color: #ffffff;
-}
-
-.welcome__btn--secondary {
-  z-index: 3;
-  background: #ffffff;
-  color: #1a1a1a;
-  border: 1px solid #e3e3e3;
-}
-
-.welcome__btn--pressed {
-  opacity: 0.9;
+.welcome__hit--pressed {
+  background: rgba(0, 0, 0, 0.06);
 }

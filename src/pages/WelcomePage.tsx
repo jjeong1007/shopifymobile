@@ -7,8 +7,7 @@ import './WelcomePage.css';
 const FRAME_WIDTH = 390;
 const FRAME_HEIGHT = 844;
 
-// Artwork only — clip above buttons (742px content minus button area)
-const CONTENT = { top: 77, left: 12, width: 366, height: 610 };
+const CONTENT = { top: 77, left: 12, width: 366, height: 742 };
 
 const GET_STARTED = { top: 698, left: 24, width: 342, height: 52 };
 const LOG_IN = { top: 762, left: 24, width: 342, height: 52 };
@@ -36,7 +35,6 @@ export function WelcomePage() {
 
     const updateScale = () => {
       const { clientWidth, clientHeight } = container;
-      // Fit entire frame so buttons are never clipped
       setScale(Math.min(clientWidth / FRAME_WIDTH, clientHeight / FRAME_HEIGHT));
     };
 
@@ -65,26 +63,24 @@ export function WelcomePage() {
 
         <button
           type="button"
-          className={`welcome__btn welcome__btn--primary ${pressed === 'get-started' ? 'welcome__btn--pressed' : ''}`}
+          aria-label="Get started"
+          className={`welcome__hit ${pressed === 'get-started' ? 'welcome__hit--pressed' : ''}`}
           style={toPx(GET_STARTED, scale)}
           onClick={() => navigate('/email?flow=signup')}
           onPointerDown={() => setPressed('get-started')}
           onPointerUp={() => setPressed(null)}
           onPointerLeave={() => setPressed(null)}
-        >
-          Get started
-        </button>
+        />
         <button
           type="button"
-          className={`welcome__btn welcome__btn--secondary ${pressed === 'log-in' ? 'welcome__btn--pressed' : ''}`}
+          aria-label="Log in"
+          className={`welcome__hit ${pressed === 'log-in' ? 'welcome__hit--pressed' : ''}`}
           style={toPx(LOG_IN, scale)}
           onClick={() => navigate('/email?flow=login')}
           onPointerDown={() => setPressed('log-in')}
           onPointerUp={() => setPressed(null)}
           onPointerLeave={() => setPressed(null)}
-        >
-          Log in
-        </button>
+        />
       </div>
     </div>
   );
