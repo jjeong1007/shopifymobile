@@ -69,6 +69,7 @@ export function ShopDashboardPage() {
   const hasLogoImage = isLogoUploaded();
   const hasBannerImage = isBannerUploaded();
   const shippingConfirmed = isShippingConfirmed();
+  const hasProducts = products.length > 0;
   const setupProgressPercent = getStoreSetupProgressPercent();
   const bannerColor = hasBannerImage ? null : THEME_BANNER_COLORS[theme];
   const bannerImageSrc = hasBannerImage ? STORE_BANNER_PLACEHOLDER : null;
@@ -225,13 +226,21 @@ export function ShopDashboardPage() {
                 <p className="shop-dashboard__action-title">
                   Upload products that you want to start selling.
                 </p>
-                <button
-                  type="button"
-                  className="shop-dashboard__action-btn"
-                  onClick={() => navigate('/shop/product/add', { state: { returnTo: '/shop/home' } })}
-                >
-                  Add a product
-                </button>
+                {hasProducts ? (
+                  <PolarisIcon
+                    source={CheckCircleIcon}
+                    tone="emphasis"
+                    className="shop-dashboard__icon--24"
+                  />
+                ) : (
+                  <button
+                    type="button"
+                    className="shop-dashboard__action-btn"
+                    onClick={() => navigate('/shop/product/add', { state: { returnTo: '/shop/home' } })}
+                  >
+                    Add a product
+                  </button>
+                )}
               </div>
               <div className="shop-dashboard__action-card">
                 <img alt="" className="shop-dashboard__action-shop-icon" src={shopAppIcon} />

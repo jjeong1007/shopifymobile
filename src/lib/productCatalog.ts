@@ -13,6 +13,10 @@ export type CatalogProduct = {
 
 const CATALOG_KEY = 'shopify-prototype-product-catalog';
 
+export function hasCatalogProducts(): boolean {
+  return getCatalogProducts().length > 0;
+}
+
 export function getCatalogProducts(): CatalogProduct[] {
   const raw = sessionStorage.getItem(CATALOG_KEY);
   if (!raw) return [];

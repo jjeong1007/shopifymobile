@@ -1,6 +1,6 @@
 import storeBannerPlaceholder from '../assets/placeholder-store-banner.png';
 import storeLogoPlaceholder from '../assets/placeholder-store-logo.png';
-import { clearProductCatalog } from './productCatalog';
+import { clearProductCatalog, hasCatalogProducts } from './productCatalog';
 import { clearShopOrders } from './shopOrders';
 import { clearProductDraft } from './productDraft';
 import { clearShopLocation } from './shopLocation';
@@ -67,12 +67,13 @@ export function setShippingConfirmed(value: boolean) {
   sessionStorage.setItem(SHIPPING_CONFIRMED_KEY, value ? 'true' : 'false');
 }
 
-/** Store setup quick actions: style is complete after onboarding; shipping after save */
+/** Store setup quick actions: style, shipping, products, and one remaining step */
 export const STORE_SETUP_TASK_COUNT = 4;
 
 export function getStoreSetupProgressPercent(): number {
   let completed = 1;
   if (isShippingConfirmed()) completed += 1;
+  if (hasCatalogProducts()) completed += 1;
   return Math.round((completed / STORE_SETUP_TASK_COUNT) * 100);
 }
 
