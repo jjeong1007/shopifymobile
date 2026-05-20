@@ -103,8 +103,7 @@ export function EmailPage() {
     if (!emailValid) return;
 
     sessionStorage.setItem('shopify-prototype-email', email.trim());
-    // Next screen will plug in here
-    console.info('[prototype] Continue with email:', email.trim(), { flow });
+    navigate('/store-start');
   };
 
   const handleSocial = async (provider: string) => {

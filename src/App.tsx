@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { EmailPage } from './pages/EmailPage';
+import { StoreStartPage } from './pages/StoreStartPage';
 import { WelcomePage } from './pages/WelcomePage';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<WelcomePage />} />
         <Route path="/email" element={<EmailPage />} />
+        <Route path="/store-start" element={<StoreStartPage />} />
         <Route path="/get-started" element={<Navigate to="/email?flow=signup" replace />} />
         <Route path="/log-in" element={<Navigate to="/email?flow=login" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
