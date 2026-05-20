@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import shopAppIcon from '../assets/shop-app-icon.png';
+import { OnboardingHeader } from '../components/OnboardingHeader';
 import './StoreStartPage.css';
 
 function ChevronRightIcon() {
@@ -75,6 +76,9 @@ export function StoreStartPage() {
 
   return (
     <div className="store-start">
+      <OnboardingHeader step={1} />
+
+      <div className="store-start__content">
       <h1 className="store-start__title">How do you want to start your store?</h1>
 
       <button
@@ -149,6 +153,7 @@ export function StoreStartPage() {
           Compare in detail
         </button>
       </p>
+      </div>
     </div>
   );
 }

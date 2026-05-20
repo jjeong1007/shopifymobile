@@ -6,26 +6,16 @@
   width: 100%;
   height: 100%;
   min-height: 100%;
-  padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
   background: #ffffff;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
-.shop-setup__skip {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  align-self: flex-end;
-  margin-bottom: 27px;
-  border: none;
-  background: none;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 500;
-  color: #000000;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+.shop-setup__content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 24px max(24px, env(safe-area-inset-bottom));
 }
 
 .shop-setup__title {

@@ -1,20 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { OnboardingHeader } from '../components/OnboardingHeader';
 import './ShopStylesPage.css';
-
-function ChevronRightIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-      <path
-        d="M7.5 5l5 5-5 5"
-        stroke="#1A1A1A"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 function ImageAddIcon() {
   return (
@@ -113,12 +100,15 @@ export function ShopStylesPage() {
 
   return (
     <div className="shop-styles">
-      <div className="shop-styles__scroll">
-        <button type="button" className="shop-styles__skip" onClick={handleSkip}>
-          <span>Skip</span>
-          <ChevronRightIcon />
-        </button>
+      <OnboardingHeader
+        step={3}
+        showBack
+        onBack={() => navigate('/shop/setup')}
+        showSkip
+        onSkip={handleSkip}
+      />
 
+      <div className="shop-styles__scroll">
         <h1 className="shop-styles__title">Let&apos;s build your store</h1>
         <p className="shop-styles__subtitle">
           Add your business details, upload your logo, and choose a style for your Shop store.

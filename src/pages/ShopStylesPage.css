@@ -15,23 +15,7 @@
   min-height: 0;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: max(24px, env(safe-area-inset-top)) 24px 16px;
-}
-
-.shop-styles__skip {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  align-self: flex-end;
-  margin-bottom: 27px;
-  border: none;
-  background: none;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 500;
-  color: #000000;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  padding: 0 24px 16px;
 }
 
 .shop-styles__title {

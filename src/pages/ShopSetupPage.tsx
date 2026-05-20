@@ -1,20 +1,7 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { OnboardingHeader } from '../components/OnboardingHeader';
 import './ShopSetupPage.css';
-
-function ChevronRightIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-      <path
-        d="M7.5 5l5 5-5 5"
-        stroke="#1A1A1A"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
@@ -30,8 +17,12 @@ export function ShopSetupPage() {
     }
   }, [navigate]);
 
-  const [businessName, setBusinessName] = useState('');
-  const [businessEmail, setBusinessEmail] = useState(savedEmail);
+  const [businessName, setBusinessName] = useState(
+    () => sessionStorage.getItem('shopify-prototype-business-name') ?? '',
+  );
+  const [businessEmail, setBusinessEmail] = useState(
+    () => sessionStorage.getItem('shopify-prototype-business-email') || savedEmail,
+  );
   const [submitted, setSubmitted] = useState(false);
 
   const isValid = useMemo(
@@ -67,11 +58,15 @@ export function ShopSetupPage() {
 
   return (
     <div className="shop-setup">
-      <button type="button" className="shop-setup__skip" onClick={handleSkip}>
-        <span>Skip</span>
-        <ChevronRightIcon />
-      </button>
+      <OnboardingHeader
+        step={2}
+        showBack
+        onBack={() => navigate('/store-start')}
+        showSkip
+        onSkip={handleSkip}
+      />
 
+      <div className="shop-setup__content">
       <h1 className="shop-setup__title">Let&apos;s build your store</h1>
       <p className="shop-setup__subtitle">
         Add your business details, upload your logo, and choose a style for your Shop store.
@@ -117,6 +112,7 @@ export function ShopSetupPage() {
           Next
         </button>
       </form>
+      </div>
     </div>
   );
 }
