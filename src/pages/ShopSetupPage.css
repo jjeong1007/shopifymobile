@@ -8,6 +8,8 @@
   min-height: 100%;
   background: #ffffff;
   overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
 }
 
 .shop-setup__content {
@@ -60,10 +62,10 @@
   color: #303030;
 }
 
-.shop-setup__field input {
+.shop-setup__input {
   width: 100%;
-  height: 32px;
-  padding: 6px 12px;
+  height: 40px;
+  padding: 8px 12px;
   border: 0.66px solid #8a8a8a;
   border-radius: 8px;
   font-size: 15px;
@@ -71,13 +73,15 @@
   color: #303030;
   background: #ffffff;
   outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
-.shop-setup__field input::placeholder {
+.shop-setup__input::placeholder {
   color: #616161;
 }
 
-.shop-setup__field input:focus {
+.shop-setup__input:focus {
   border-color: #303030;
   box-shadow: 0 0 0 1px #303030;
 }

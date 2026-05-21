@@ -15,6 +15,7 @@ import { ProductCategorySheet } from '../components/ProductCategorySheet';
 import { ProductDescriptionSheet } from '../components/ProductDescriptionSheet';
 import { ProductShippingSheet } from '../components/ProductShippingSheet';
 import { PolarisIcon } from '../components/PolarisIcon';
+import { PrototypeNoticeDialog } from '../components/PrototypeNoticeDialog';
 import { ShopBottomNav } from '../components/ShopBottomNav';
 import {
   getProductCategory,
@@ -151,6 +152,7 @@ export function ShopAddProductPage() {
   const [descriptionSheetOpen, setDescriptionSheetOpen] = useState(false);
   const [categorySheetOpen, setCategorySheetOpen] = useState(false);
   const [shippingSheetOpen, setShippingSheetOpen] = useState(false);
+  const [noticeOpen, setNoticeOpen] = useState(false);
 
   useEffect(() => {
     if (sessionStorage.getItem('shopify-prototype-store-type') !== 'shop') {
@@ -268,7 +270,7 @@ export function ShopAddProductPage() {
               <button
                 type="button"
                 className="add-product__discount-btn"
-                onClick={() => console.info('[prototype] Create Discount')}
+                onClick={() => setNoticeOpen(true)}
               >
                 Create Discount
               </button>
@@ -297,6 +299,8 @@ export function ShopAddProductPage() {
         />
 
         <ShopBottomNav activeTab="home" />
+
+        <PrototypeNoticeDialog open={noticeOpen} onClose={() => setNoticeOpen(false)} />
       </div>
     </AppProvider>
   );

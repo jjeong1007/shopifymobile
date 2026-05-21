@@ -14,6 +14,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import productMain from '../assets/placeholder-product-main.png';
 import shopAppIcon from '../assets/shop-app-icon.png';
 import { PolarisIcon } from '../components/PolarisIcon';
+import { PrototypeNoticeDialog } from '../components/PrototypeNoticeDialog';
 import { ShopBottomNav } from '../components/ShopBottomNav';
 import { useBannerContrast } from '../hooks/useBannerContrast';
 import {
@@ -61,6 +62,7 @@ export function ShopDashboardPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const [products, setProducts] = useState(() => getCatalogProducts());
+  const [noticeOpen, setNoticeOpen] = useState(false);
   const theme = getStoreTheme();
   const businessName = getBusinessName();
   const displayName = getDisplayName();
@@ -110,30 +112,53 @@ export function ShopDashboardPage() {
             ) : null}
             <div className="shop-dashboard__hero-top">
               {hasLogoImage ? (
-                <img
-                  src={STORE_LOGO_PLACEHOLDER}
-                  alt=""
+                <button
+                  type="button"
                   className="shop-dashboard__avatar shop-dashboard__avatar--store shop-dashboard__avatar--store-image"
-                />
+                  aria-label="Store profile"
+                  onClick={() => setNoticeOpen(true)}
+                >
+                  <img src={STORE_LOGO_PLACEHOLDER} alt="" />
+                </button>
               ) : (
-                <div
+                <button
+                  type="button"
                   className="shop-dashboard__avatar shop-dashboard__avatar--store"
+                  aria-label="Store profile"
                   style={{
                     backgroundColor: THEME_STORE_LOGO_COLORS[theme],
                     color: THEME_STORE_LOGO_TEXT_COLORS[theme],
                   }}
+                  onClick={() => setNoticeOpen(true)}
                 >
                   {storeInitials}
-                </div>
+                </button>
               )}
               <div className="shop-dashboard__hero-actions">
-                <button type="button" className="shop-dashboard__icon-btn" aria-label="Notifications">
+                <button
+                  type="button"
+                  className="shop-dashboard__icon-btn"
+                  aria-label="Notifications"
+                  onClick={() => setNoticeOpen(true)}
+                >
                   <PolarisIcon source={NotificationIcon} className="shop-dashboard__icon--20" />
                 </button>
-                <button type="button" className="shop-dashboard__icon-btn" aria-label="Edit store">
+                <button
+                  type="button"
+                  className="shop-dashboard__icon-btn"
+                  aria-label="Edit store"
+                  onClick={() => setNoticeOpen(true)}
+                >
                   <PolarisIcon source={EditIcon} className="shop-dashboard__icon--20" />
                 </button>
-                <div className="shop-dashboard__avatar shop-dashboard__avatar--user">{userInitials}</div>
+                <button
+                  type="button"
+                  className="shop-dashboard__avatar shop-dashboard__avatar--user"
+                  aria-label="Account"
+                  onClick={() => setNoticeOpen(true)}
+                >
+                  {userInitials}
+                </button>
               </div>
             </div>
             <div className="shop-dashboard__hero-text">
@@ -259,6 +284,8 @@ export function ShopDashboardPage() {
         </footer>
 
         <ShopBottomNav activeTab="home" />
+
+        <PrototypeNoticeDialog open={noticeOpen} onClose={() => setNoticeOpen(false)} />
       </div>
     </AppProvider>
   );

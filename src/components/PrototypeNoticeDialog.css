@@ -1,0 +1,62 @@
+.prototype-notice {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.prototype-notice__backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.prototype-notice__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.prototype-notice__title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.prototype-notice__desc {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #727272;
+}
+
+.prototype-notice__btn {
+  width: 100%;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: #303030;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.prototype-notice__btn:active {
+  opacity: 0.9;
+}

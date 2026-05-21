@@ -86,7 +86,7 @@ export function ShopSetupPage() {
               setBusinessName(e.target.value);
               if (submitted) setSubmitted(false);
             }}
-            className={submitted && !businessName.trim() ? 'shop-setup__input--error' : ''}
+            className={`shop-setup__input${submitted && !businessName.trim() ? ' shop-setup__input--error' : ''}`}
             aria-invalid={submitted && !businessName.trim()}
           />
         </label>
@@ -103,7 +103,7 @@ export function ShopSetupPage() {
               setBusinessEmail(e.target.value);
               if (submitted) setSubmitted(false);
             }}
-            className={submitted && !isValidEmail(businessEmail) ? 'shop-setup__input--error' : ''}
+            className={`shop-setup__input${submitted && !isValidEmail(businessEmail) ? ' shop-setup__input--error' : ''}`}
             aria-invalid={submitted && !isValidEmail(businessEmail)}
           />
         </label>

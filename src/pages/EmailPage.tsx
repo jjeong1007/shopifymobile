@@ -109,8 +109,8 @@ export function EmailPage() {
   const handleSocial = async (provider: string) => {
     setSocialLoading(provider);
     await new Promise((resolve) => setTimeout(resolve, 400));
-    setSocialLoading(null);
-    console.info('[prototype] Continue with', provider, { flow });
+    sessionStorage.setItem('shopify-prototype-email', `${provider}@example.com`);
+    navigate('/store-start');
   };
 
   const handleRefresh = () => {
