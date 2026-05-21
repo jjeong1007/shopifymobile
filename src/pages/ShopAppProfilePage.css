@@ -32,6 +32,18 @@
   font-size: 14px;
   font-weight: 550;
   line-height: 1;
+  overflow: hidden;
+}
+
+.shop-app-profile__store-avatar--image {
+  background: #ffffff;
+}
+
+.shop-app-profile__store-avatar--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .shop-app-profile__title {
@@ -131,12 +143,64 @@
   color: #636363;
 }
 
+.shop-app-profile__store-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
+  margin-top: 48px;
+  padding: 24px 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.shop-app-profile__store-hero--has-banner-image {
+  background-color: #e3e3e3;
+}
+
+.shop-app-profile__store-hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shop-app-profile__store-hero--has-banner-image.shop-app-profile__store-hero--bg-dark
+  .shop-app-profile__store-hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.28) 100%
+  );
+}
+
+.shop-app-profile__store-hero--has-banner-image.shop-app-profile__store-hero--bg-light
+  .shop-app-profile__store-hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(0, 0, 0, 0.06) 100%
+  );
+}
+
 .shop-app-profile__store-name {
-  margin: 48px 0 0;
+  position: relative;
+  z-index: 1;
+  margin: 0;
   font-size: 28px;
   font-weight: 400;
   line-height: normal;
   text-align: center;
+  color: #000000;
+}
+
+.shop-app-profile__store-hero--bg-dark .shop-app-profile__store-name {
+  color: #ffffff;
+}
+
+.shop-app-profile__store-hero--bg-light .shop-app-profile__store-name {
   color: #000000;
 }
 
@@ -172,6 +236,62 @@
   margin-top: 12px;
 }
 
+.shop-app-profile__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+  padding: 28px 20px 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.shop-app-profile__empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: #f4f4f4;
+}
+
+.shop-app-profile__empty-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  color: #000000;
+}
+
+.shop-app-profile__empty-desc {
+  margin: 0 0 16px;
+  max-width: 280px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #727272;
+}
+
+.shop-app-profile__empty-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 16px;
+  color: #303030;
+  cursor: pointer;
+  box-shadow:
+    inset 0 -1px 0 #b5b5b5,
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 0.5px 1.5px #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .shop-app-profile__product {
   display: flex;
   flex-direction: column;
@@ -193,6 +313,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.shop-app-profile__product-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
 }
 
 .shop-app-profile__views {
@@ -320,12 +449,18 @@
   height: 16px;
 }
 
+.shop-app-profile .shop-app-profile__icon--20 svg {
+  width: 20px;
+  height: 20px;
+}
+
 .shop-app-profile .shop-app-profile__icon--24 svg {
   width: 24px;
   height: 24px;
 }
 
 .shop-app-profile .shop-app-profile__icon--16,
+.shop-app-profile .shop-app-profile__icon--20,
 .shop-app-profile .shop-app-profile__icon--24 {
   display: inline-flex;
   line-height: 0;

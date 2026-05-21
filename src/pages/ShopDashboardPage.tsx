@@ -282,38 +282,47 @@ export function ShopDashboardPage() {
                     className="shop-dashboard__icon--24"
                   />
                 </div>
+              ) : (
+                <div className="shop-dashboard__action-card">
+                  <PolarisIcon source={PaymentIcon} className="shop-dashboard__icon--20" />
+                  <p className="shop-dashboard__action-title">
+                    Setup Shopify Payments to start selling
+                  </p>
+                  <button
+                    type="button"
+                    className="shop-dashboard__action-btn"
+                    onClick={() => navigate('/shop/payments')}
+                  >
+                    Setup Payments
+                  </button>
+                </div>
+              )}
+              {paymentsConfirmed ? (
+                <div className="shop-dashboard__action-card shop-dashboard__action-card--full-width">
+                  <img alt="" className="shop-dashboard__action-shop-icon" src={shopAppIcon} />
+                  <p className="shop-dashboard__action-title">Start selling on the Shop app</p>
+                  <button
+                    type="button"
+                    className="shop-dashboard__action-btn"
+                    onClick={() => navigate('/shop/download')}
+                  >
+                    Download Shop
+                  </button>
+                </div>
               ) : null}
-              <div
-                className={`shop-dashboard__action-card${paymentsConfirmed ? ' shop-dashboard__action-card--full-width' : ''}`}
-              >
-                <img alt="" className="shop-dashboard__action-shop-icon" src={shopAppIcon} />
-                <p className="shop-dashboard__action-title">Start selling on the Shop app</p>
-                <button
-                  type="button"
-                  className="shop-dashboard__action-btn"
-                  onClick={() => navigate('/shop/download')}
-                >
-                  Download Shop
-                </button>
-              </div>
             </div>
 
             {!paymentsConfirmed ? (
               <div className="shop-dashboard__payments-card">
-                <PolarisIcon source={ProductIcon} className="shop-dashboard__icon--20" />
-                <p className="shop-dashboard__payments-title">
-                  Setup Shopify Payments to start selling
-                </p>
+                <img alt="" className="shop-dashboard__action-shop-icon" src={shopAppIcon} />
+                <p className="shop-dashboard__payments-title">Start selling on the Shop app</p>
                 <button
                   type="button"
                   className="shop-dashboard__payments-btn"
-                  onClick={() => navigate('/shop/payments')}
+                  onClick={() => navigate('/shop/download')}
                 >
-                  Setup Payments
+                  Download Shop
                 </button>
-                <p className="shop-dashboard__payments-note">
-                  *In order to start selling on the Shop app, you must first set up payments
-                </p>
               </div>
             ) : null}
           </section>
