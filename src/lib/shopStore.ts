@@ -58,6 +58,8 @@ export function setStoreTheme(theme: StoreThemeId) {
 }
 
 const SHIPPING_CONFIRMED_KEY = 'shopify-prototype-shipping-confirmed';
+const PAYMENTS_CONFIRMED_KEY = 'shopify-prototype-payments-confirmed';
+const SHOP_DOWNLOAD_ACKNOWLEDGED_KEY = 'shopify-prototype-shop-download-acknowledged';
 
 export function isShippingConfirmed(): boolean {
   return sessionStorage.getItem(SHIPPING_CONFIRMED_KEY) === 'true';
@@ -67,13 +69,31 @@ export function setShippingConfirmed(value: boolean) {
   sessionStorage.setItem(SHIPPING_CONFIRMED_KEY, value ? 'true' : 'false');
 }
 
-/** Store setup quick actions: style, shipping, products, and one remaining step */
-export const STORE_SETUP_TASK_COUNT = 4;
+export function isPaymentsConfirmed(): boolean {
+  return sessionStorage.getItem(PAYMENTS_CONFIRMED_KEY) === 'true';
+}
+
+export function setPaymentsConfirmed(value: boolean) {
+  sessionStorage.setItem(PAYMENTS_CONFIRMED_KEY, value ? 'true' : 'false');
+}
+
+export function isShopDownloadAcknowledged(): boolean {
+  return sessionStorage.getItem(SHOP_DOWNLOAD_ACKNOWLEDGED_KEY) === 'true';
+}
+
+export function setShopDownloadAcknowledged(value: boolean) {
+  sessionStorage.setItem(SHOP_DOWNLOAD_ACKNOWLEDGED_KEY, value ? 'true' : 'false');
+}
+
+/** Store setup quick actions: style, shipping, products, payments, and download Shop */
+export const STORE_SETUP_TASK_COUNT = 5;
 
 export function getStoreSetupProgressPercent(): number {
   let completed = 1;
   if (isShippingConfirmed()) completed += 1;
   if (hasCatalogProducts()) completed += 1;
+  if (isPaymentsConfirmed()) completed += 1;
+  if (isShopDownloadAcknowledged()) completed += 1;
   return Math.round((completed / STORE_SETUP_TASK_COUNT) * 100);
 }
 
@@ -81,6 +101,8 @@ export function clearStoreMedia() {
   setLogoUploaded(false);
   setBannerUploaded(false);
   setShippingConfirmed(false);
+  setPaymentsConfirmed(false);
+  setShopDownloadAcknowledged(false);
   clearShopLocation();
   clearShippingRates();
   clearProductDraft();

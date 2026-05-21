@@ -409,6 +409,61 @@ button.shop-dashboard__avatar {
   transition: width 0.25s ease;
 }
 
+/* Payments quick action — Figma 489:318 */
+.shop-dashboard__payments-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  margin-top: 8px;
+  border: 0.66px solid #d9d9d9;
+  border-radius: 12px;
+  background: #ffffff;
+  width: 100%;
+  max-width: 366px;
+  box-sizing: border-box;
+}
+
+.shop-dashboard__payments-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  color: #000000;
+}
+
+.shop-dashboard__payments-btn {
+  align-self: flex-start;
+  height: 28px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #303030;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow:
+    inset 0 -1px 0 #b5b5b5,
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 0.5px 1.5px #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-dashboard__payments-btn:active {
+  opacity: 0.9;
+}
+
+.shop-dashboard__payments-note {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: #696969;
+}
+
 /* Actions grid 419:1701 */
 .shop-dashboard__actions-grid {
   display: grid;
@@ -427,6 +482,10 @@ button.shop-dashboard__avatar {
   border-radius: 12px;
   background: #ffffff;
   box-sizing: border-box;
+}
+
+.shop-dashboard__action-card--full-width {
+  grid-column: 1 / -1;
 }
 
 .shop-dashboard__action-title {

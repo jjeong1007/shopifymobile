@@ -1,0 +1,336 @@
+/* Figma node 430:749 — Shop App storefront profile (390×844) */
+
+.shop-app-profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: #ededed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+.shop-app-profile__header {
+  position: relative;
+  flex-shrink: 0;
+  height: 83px;
+}
+
+.shop-app-profile__store-avatar {
+  position: absolute;
+  top: 43px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1;
+}
+
+.shop-app-profile__title {
+  position: absolute;
+  top: 54px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.shop-app-profile__user-avatar {
+  position: absolute;
+  top: 47px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #c530c5;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 550;
+  line-height: 1;
+}
+
+.shop-app-profile__scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 11px 12px 120px;
+}
+
+.shop-app-profile__stats {
+  display: flex;
+  gap: 7px;
+}
+
+.shop-app-profile__stat {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.shop-app-profile__stat-label {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.shop-app-profile__stat-value {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.shop-app-profile__stat-reviews {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  min-height: 19px;
+}
+
+.shop-app-profile__stat-reviews svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.shop-app-profile__stat-score {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: #000000;
+}
+
+.shop-app-profile__stat-score-max {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  color: #636363;
+}
+
+.shop-app-profile__store-name {
+  margin: 48px 0 0;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: #000000;
+}
+
+.shop-app-profile__add-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 48px;
+  padding: 8px 12px;
+  border: 1px dashed #c8c8c8;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-app-profile__section-title {
+  margin: 24px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  color: #000000;
+}
+
+.shop-app-profile__products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.shop-app-profile__product {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.shop-app-profile__product-media {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid #dadada;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.24);
+}
+
+.shop-app-profile__product-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shop-app-profile__views {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.shop-app-profile__product-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 105px;
+}
+
+.shop-app-profile__product-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: #000000;
+}
+
+.shop-app-profile__rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.shop-app-profile__stars {
+  display: flex;
+  align-items: center;
+}
+
+.shop-app-profile__review-count {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: #000000;
+}
+
+.shop-app-profile__product-price {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: #000000;
+}
+
+.shop-app-profile__footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 49px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shop-app-profile__back,
+.shop-app-profile__nav {
+  pointer-events: auto;
+}
+
+.shop-app-profile__back {
+  position: absolute;
+  left: 39px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+  border: 1px solid #f0f0f0;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-app-profile__nav {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid #f0f0f0;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+}
+
+.shop-app-profile__nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-app-profile__nav-item--active {
+  background: #f7f7f7;
+}
+
+.shop-app-profile .shop-app-profile__icon--16 svg {
+  width: 16px;
+  height: 16px;
+}
+
+.shop-app-profile .shop-app-profile__icon--24 svg {
+  width: 24px;
+  height: 24px;
+}
+
+.shop-app-profile .shop-app-profile__icon--16,
+.shop-app-profile .shop-app-profile__icon--24 {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.shop-app-profile .Polaris-Icon {
+  margin: 0;
+}

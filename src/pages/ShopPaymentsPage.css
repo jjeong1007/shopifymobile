@@ -1,0 +1,241 @@
+/* Figma node 463:872 — Shopify Payments setup */
+
+.shop-payments {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: #f1f1f1;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+.shop-payments__topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-shrink: 0;
+  min-height: 70px;
+  padding: 16px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.shop-payments__topbar-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  color: #000000;
+  cursor: pointer;
+  min-width: 78px;
+  text-align: left;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-payments__topbar-btn--next {
+  text-align: right;
+  font-weight: 600;
+}
+
+.shop-payments__topbar-btn--next:disabled {
+  color: #8a8a8a;
+  cursor: not-allowed;
+}
+
+.shop-payments__topbar-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  color: #000000;
+  text-align: center;
+}
+
+.shop-payments__scroll {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 0 120px;
+}
+
+.shop-payments__main,
+.shop-payments__additional {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  padding: 16px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.shop-payments__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shop-payments__heading {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  color: #000000;
+}
+
+.shop-payments__subheading {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #727272;
+}
+
+.shop-payments__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.shop-payments__label {
+  font-size: 13px;
+  font-weight: 450;
+  line-height: 20px;
+  color: #303030;
+}
+
+.shop-payments__input,
+.shop-payments__select {
+  width: 100%;
+  min-height: 32px;
+  padding: 6px 12px;
+  border: 0.66px solid #8a8a8a;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 450;
+  line-height: 20px;
+  color: #303030;
+  background: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.shop-payments__input::placeholder {
+  color: #616161;
+}
+
+.shop-payments__input:focus,
+.shop-payments__select:focus {
+  border-color: #303030;
+  box-shadow: 0 0 0 1px #303030;
+}
+
+.shop-payments__dob-row {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.shop-payments__dob-input {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.shop-payments__dob-input--year {
+  width: auto;
+  flex: 1;
+  min-width: 0;
+}
+
+.shop-payments__row {
+  display: flex;
+  gap: 19px;
+  width: 100%;
+}
+
+.shop-payments__row .shop-payments__field {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: calc((100% - 19px) / 2);
+}
+
+.shop-payments__select-wrap {
+  position: relative;
+  display: block;
+}
+
+.shop-payments__select {
+  appearance: none;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.shop-payments__select:invalid,
+.shop-payments__select option[value=''] {
+  color: #616161;
+}
+
+.shop-payments__select-chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.shop-payments__select-chevron svg {
+  width: 20px;
+  height: 20px;
+}
+
+.shop-payments__add-method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px;
+  border: 1px solid #dedede;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shop-payments__add-method-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  color: #000000;
+}
+
+.shop-payments .shop-payments__icon--20 svg {
+  width: 20px;
+  height: 20px;
+}
+
+.shop-payments .shop-payments__icon--20 {
+  display: inline-flex;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.shop-payments .Polaris-Icon {
+  margin: 0;
+}

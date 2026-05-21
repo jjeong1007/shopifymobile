@@ -6,6 +6,7 @@ import {
   EditIcon,
   NotificationIcon,
   PackageIcon,
+  PaymentIcon,
   PlusIcon,
   ProductIcon,
   StoreIcon,
@@ -23,6 +24,7 @@ import {
   getInitials,
   getStoreSetupProgressPercent,
   getStoreTheme,
+  isPaymentsConfirmed,
   isShippingConfirmed,
   isBannerUploaded,
   isLogoUploaded,
@@ -71,6 +73,7 @@ export function ShopDashboardPage() {
   const hasLogoImage = isLogoUploaded();
   const hasBannerImage = isBannerUploaded();
   const shippingConfirmed = isShippingConfirmed();
+  const paymentsConfirmed = isPaymentsConfirmed();
   const hasProducts = products.length > 0;
   const setupProgressPercent = getStoreSetupProgressPercent();
   const bannerColor = hasBannerImage ? null : THEME_BANNER_COLORS[theme];
@@ -267,17 +270,61 @@ export function ShopDashboardPage() {
                   </button>
                 )}
               </div>
-              <div className="shop-dashboard__action-card">
+              {paymentsConfirmed ? (
+                <div className="shop-dashboard__action-card">
+                  <PolarisIcon source={PaymentIcon} className="shop-dashboard__icon--20" />
+                  <p className="shop-dashboard__action-title">
+                    Setup Shopify Payments to start selling
+                  </p>
+                  <PolarisIcon
+                    source={CheckCircleIcon}
+                    tone="emphasis"
+                    className="shop-dashboard__icon--24"
+                  />
+                </div>
+              ) : null}
+              <div
+                className={`shop-dashboard__action-card${paymentsConfirmed ? ' shop-dashboard__action-card--full-width' : ''}`}
+              >
                 <img alt="" className="shop-dashboard__action-shop-icon" src={shopAppIcon} />
                 <p className="shop-dashboard__action-title">Start selling on the Shop app</p>
-                <button type="button" className="shop-dashboard__action-btn">Download Shop</button>
+                <button
+                  type="button"
+                  className="shop-dashboard__action-btn"
+                  onClick={() => navigate('/shop/download')}
+                >
+                  Download Shop
+                </button>
               </div>
             </div>
+
+            {!paymentsConfirmed ? (
+              <div className="shop-dashboard__payments-card">
+                <PolarisIcon source={ProductIcon} className="shop-dashboard__icon--20" />
+                <p className="shop-dashboard__payments-title">
+                  Setup Shopify Payments to start selling
+                </p>
+                <button
+                  type="button"
+                  className="shop-dashboard__payments-btn"
+                  onClick={() => navigate('/shop/payments')}
+                >
+                  Setup Payments
+                </button>
+                <p className="shop-dashboard__payments-note">
+                  *In order to start selling on the Shop app, you must first set up payments
+                </p>
+              </div>
+            ) : null}
           </section>
         </div>
 
         <footer className="shop-dashboard__footer">
-          <button type="button" className="shop-dashboard__download-cta">
+          <button
+            type="button"
+            className="shop-dashboard__download-cta"
+            onClick={() => navigate('/shop/download')}
+          >
             <img alt="" className="shop-dashboard__download-icon" src={shopAppIcon} />
             <span>Download Shop to start selling</span>
           </button>

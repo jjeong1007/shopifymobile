@@ -2,9 +2,14 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { MenuIcon, SearchIcon } from '@shopify/polaris-icons';
 import { EmailPage } from './pages/EmailPage';
 import { ShopDashboardPage } from './pages/ShopDashboardPage';
+import { ShopAppHomePage } from './pages/ShopAppHomePage';
+import { ShopAppLoadingPage } from './pages/ShopAppLoadingPage';
+import { ShopAppProfilePage } from './pages/ShopAppProfilePage';
+import { ShopDownloadPage } from './pages/ShopDownloadPage';
 import { ShopAddProductPage } from './pages/ShopAddProductPage';
 import { ShopNotInTestPage } from './pages/ShopNotInTestPage';
 import { ShopOrdersPage } from './pages/ShopOrdersPage';
+import { ShopPaymentsPage } from './pages/ShopPaymentsPage';
 import { ShopProductsPage } from './pages/ShopProductsPage';
 import { ShopShippingPage } from './pages/ShopShippingPage';
 import { ShopSetupPage } from './pages/ShopSetupPage';
@@ -23,6 +28,11 @@ export default function App() {
         <Route path="/shop/styles" element={<ShopStylesPage />} />
         <Route path="/shop/home" element={<ShopDashboardPage />} />
         <Route path="/shop/shipping" element={<ShopShippingPage />} />
+        <Route path="/shop/payments" element={<ShopPaymentsPage />} />
+        <Route path="/shop/download" element={<ShopDownloadPage />} />
+        <Route path="/shop/app-loading" element={<ShopAppLoadingPage />} />
+        <Route path="/shop/app/home" element={<ShopAppHomePage />} />
+        <Route path="/shop/app/profile" element={<ShopAppProfilePage />} />
         <Route path="/shop/orders" element={<ShopOrdersPage />} />
         <Route path="/shop/products" element={<ShopProductsPage />} />
         <Route path="/shop/product/add" element={<ShopAddProductPage />} />
