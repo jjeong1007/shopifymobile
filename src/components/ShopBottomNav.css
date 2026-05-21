@@ -50,7 +50,15 @@
 }
 
 .shop-bottom-nav__item--active {
-  background: #f7f7f7;
+  background: #ebebeb;
+}
+
+.shop-bottom-nav__item--active .Polaris-Icon svg {
+  fill: #303030;
+}
+
+.shop-bottom-nav__item:not(.shop-bottom-nav__item--active) .Polaris-Icon svg {
+  fill: #8a8a8a;
 }
 
 .shop-bottom-nav .shop-bottom-nav__icon--24 svg {
